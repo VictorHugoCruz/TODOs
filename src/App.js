@@ -1,4 +1,5 @@
 import React from 'react'
+import { CreateTodoButton } from './CreateTodoButton'
 // import styled from 'styled-components'
 import { TodoCounter } from './TodoCounter'
 import { TodoItem } from './TodoItem'
@@ -18,9 +19,10 @@ function App() {
       <TodoSearch />
       <TodoList>
         {todos.map(todo =>(
-          <TodoItem text={todos.text}/>
+          <TodoItem text={todo.text}/>
         ))}
       </TodoList>
+      <CreateTodoButton />
     </>
   )
 }
