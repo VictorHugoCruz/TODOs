@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const List = styled.section`
-width:calc(100%-500px);
-border: 1px solid black;
+width:600px;
+margin: 0 auto;
+margin-top:40px;
 `;
 
 const ListUnOrder = styled.ul`

@@ -3,17 +3,18 @@ import styled from 'styled-components'
 
 const Entrada = styled.input`
   margin: 0 auto;
-  width: calc(100%-32px);
-  min-width: 300px;
+  /* width: calc(100%-32px); */
+  min-width: 350px;
   height: 60px;
   background-color:#f2f4f5;
   border-radius: 6px;
-  border: 2px solid #202329;
+  border: 2px solid #192234;
   font-size:24px;
   font-family: 'Monserrat';
   font-weight: 400;
+  text-align: center;
   color: #1E1E1F;
-  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  box-shadow: 0px 15px 100px rgba(32, 35, 41, 0.5);
 
   &::placeholder{
     color: #A5A5A5;
@@ -21,8 +22,12 @@ const Entrada = styled.input`
     font-weight: 400;
   }
 
+  &:hover{
+    width: 360px;
+    height: 65px;
+  }
   &:focus{
-    outline-color:#61DAFA;
+    outline-color:#146587;
   }
 `;
 

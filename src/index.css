@@ -1,8 +1,13 @@
+/*.color1 {color: #121522;}
+  .color2 {color: #12364f;}
+  .color3 {color: #146587;}
+  .color4 {color: #1da3c8;}
+  .color5 {color: #20dad8;} */
 body {
   margin: 0;
   padding: 0;
-  background: #F2F4F5;
-  color: #1E1E1F;
+  background: #146587;
+  color: #121522;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
