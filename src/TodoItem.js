@@ -45,15 +45,23 @@ const Item = styled.li`
 `;
 
 function TodoItem(props) {
+  const onCompleted = ()=>{
+    alert('se ha completado el todo ' + props.text);
+  }
+
+  const onDelete = ()=>{
+    alert('se ha eliminado el todo ' + props.text);
+  }
+
   return (
     <Item>
-      <span className={`Icon ${props.completed && 'Icon-check--active'}`}>
+      <span onClick={onCompleted} className={`Icon ${props.completed && 'Icon-check--active'}`}>
         <IoMdDoneAll className='Iconos'/>
       </span>
       <p className={`TodoItem-p ${props.completed && 'TodoItem--completed'}`}>
         {props.text}
       </p>
-      <span className={`Icon Icon-delete`}>
+      <span onClick={onDelete} className={`Icon Icon-delete`}>
         <IoMdCloseCircle className='Iconos'/>
       </span>
     </Item>    

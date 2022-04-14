@@ -30,8 +30,12 @@ const Button = styled.button`
   
 `;
 function CreateTodoButton() {
+  const onClickButton = (msj)=>{
+    alert(msj)
+  }
+
   return (
-    <Button>
+    <Button onClick={()=>onClickButton('nuestro modal')}>
       <IoIosAddCircleOutline />
     </Button>    
   )

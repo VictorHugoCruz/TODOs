@@ -32,8 +32,18 @@ const Entrada = styled.input`
 `;
 
 function TodoSearch() {
+  const [searchValue, setSearchValue] = React.useState('')
+  
+  const onChangeSearchValue = (event)=>{
+    console.log(event.target.value);
+    setSearchValue(event.target.value);
+  }
   return (
-  <Entrada placeholder='Escribe aqui'/>    
+  <Entrada 
+    onChange={onChangeSearchValue} 
+    placeholder='Escribe aqui'
+    value={searchValue}  
+    />    
   )
 }
 
