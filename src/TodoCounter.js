@@ -34,10 +34,10 @@ const Logo = styled.div`
 `;
 
 
-function TodoCounter() {
+function TodoCounter({ completed, total }) {
   return (
     <>
-    <Title>Has completado 2 de 3 TODOs</Title>
+    <Title>Has completado {completed} de {total} TODOs</Title>
     <Logo>
       <img src={image} alt="Logo" />
     </Logo>
