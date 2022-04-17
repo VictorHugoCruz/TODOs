@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from './assets/logotodo.jpg'
+import image from '../assets/logotodo.jpg'
 
 const Title = styled.h2`
   margin: 30px 0;
