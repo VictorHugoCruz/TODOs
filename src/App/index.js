@@ -7,20 +7,31 @@ import AppUI from './AppUI'
 //   { text: 'Añadir iconos', completed: false },
 //   { text: 'Hacer mejoras a nuestro codigo', completed: false },
 // ]
+function useLocalStorage(itemName, initialValue){
+  const localStorageItem = localStorage.getItem(itemName)
+  let parsedItem;
 
-function App() {
-  const localStorageTodos = localStorage.getItem('TODO_V1')
-  let parsedTodos;
-
-  if(!localStorageTodos){
-    localStorage.setItem('TODO_V1', JSON.stringify([]))
-    parsedTodos= [];
+  if(!localStorageItem){
+    localStorage.setItem(itemName, JSON.stringify(initialValue))
+    parsedItem= initialValue;
   }else{
-    parsedTodos = JSON.parse(localStorageTodos)
+    parsedItem = JSON.parse(localStorageItem)
   }
 
+  const [item, setItem] = React.useState(parsedItem)
+  
+
+  const saveItem= (newItem)=>{
+    const stringifyedTodo = JSON.stringify(newItem);
+    localStorage.setItem(itemName, stringifyedTodo);
+    setItem(newItem)
+  }
+
+  return [item, saveItem]
+}
+function App() {
+  const [todos, saveTodos] = useLocalStorage('TODO_V1', [])
   const [searchValue, setSearchValue] = React.useState('')
-  const [todos, setTodos] = React.useState(parsedTodos)
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -35,12 +46,6 @@ function App() {
 
       return todoText.includes(searchText);
     })
-  }
-
-  const saveTodos= (newTodos)=>{
-    const stringifyedTodo = JSON.stringify(newTodos);
-    localStorage.setItem('TODO_V1', stringifyedTodo);
-    setTodos(newTodos)
   }
 
   const completeTodo = (text)=>{
