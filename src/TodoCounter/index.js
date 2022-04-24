@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import image from '../assets/logotodo.jpg'
+import { TodoContext } from '../TodoContext';
 
 const Title = styled.h2`
   margin: 30px 0;
@@ -34,10 +35,11 @@ const Logo = styled.div`
 `;
 
 
-function TodoCounter({ completed, total }) {
+function TodoCounter() {
+  const { completedTodos, totalTodos } = React.useContext(TodoContext)
   return (
     <>
-    <Title>Has completado {completed} de {total} TODOs</Title>
+    <Title>Has completado {completedTodos} de {totalTodos} TODOs</Title>
     <Logo>
       <img src={image} alt="Logo" />
     </Logo>

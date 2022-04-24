@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { TodoContext } from '../TodoContext';
 
 const Entrada = styled.input`
   margin: 0 auto;
@@ -31,9 +32,10 @@ const Entrada = styled.input`
   }
 `;
 
-function TodoSearch({ searchValue, setSearchValue }) {
-    
-    const onChangeSearchValue = (event)=>{
+function TodoSearch() {
+  const { searchValue, setSearchValue } = React.useContext(TodoContext)
+  
+  const onChangeSearchValue = (event)=>{
     setSearchValue(event.target.value);
   }
   return (

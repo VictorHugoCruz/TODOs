@@ -19,6 +19,7 @@ const Button = styled.button`
   align-items: center;
   height: 64px;
   width: 64px;
+  z-index:100;
 
   transform: rotate(0);
   transition: .3s ease;
@@ -29,13 +30,11 @@ const Button = styled.button`
     
   
 `;
-function CreateTodoButton() {
-  const onClickButton = (msj)=>{
-    alert(msj)
-  }
+function CreateTodoButton(props) {
+  const onClickButton = () =>{props.setOpenModal(prevState => !prevState)}
 
   return (
-    <Button onClick={()=>onClickButton('nuestro modal')}>
+    <Button onClick={onClickButton}>
       <IoIosAddCircleOutline />
     </Button>    
   )
